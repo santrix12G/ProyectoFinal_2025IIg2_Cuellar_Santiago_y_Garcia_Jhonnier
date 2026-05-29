@@ -46,10 +46,9 @@ const Register = () => {
     //registrar usuario en la base de datos
     const user = data.user
     if (user) {
-      console.log(formData.fullname);
       const { error: insertError } = await supabase
         .from('Usuario')
-        .insert([{nombre_completo: formData.fullname, contraseña: formData.password, rol: formData.role, correo: formData.email,
+        .insert([{nombre_completo: formData.fullname, rol: formData.role, correo: formData.email,
           id_user_autenticacion: user.id
         }])
       if (insertError) alert(insertError.message)
@@ -269,7 +268,7 @@ const Register = () => {
   // Función para manejar los enlaces de términos y privacidad
   const handleTermsLink = (e) => {
     e.preventDefault();
-    console.log('Abriendo términos y condiciones...');
+
   };
 
   // Auto-focus en el campo de nombre al cargar el componente

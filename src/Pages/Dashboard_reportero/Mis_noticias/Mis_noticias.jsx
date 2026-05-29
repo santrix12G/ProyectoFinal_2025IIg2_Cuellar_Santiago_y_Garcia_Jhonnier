@@ -251,17 +251,17 @@ const Mis_noticias = () => {
   };
 
   const editarNoticia = (id) => {
-    console.log('Editando noticia:', id);
+
     navigate(`/dashboard-reportero/reportero-editar-noticia/${id}`);
   };
 
   const verPreview = (id) => {
-    console.log('Viendo preview de noticia:', id);
+
     // navigate(`/preview-noticia/${id}`);
   };
 
   const duplicarNoticia = (id) => {
-    console.log('Duplicando noticia:', id);
+
     // Implementar lógica de duplicación
   };
 

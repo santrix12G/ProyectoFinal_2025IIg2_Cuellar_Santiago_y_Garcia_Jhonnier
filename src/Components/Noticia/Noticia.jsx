@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
+import DOMPurify from 'dompurify';
 import { supabase } from '../../supabaseClient.js';
 import './Noticia.css';
 import SocialMedias from '../SocialMedia/SocialMedias.jsx';
@@ -101,7 +102,7 @@ const Noticia = () => {
 
 
         let noticiaObtenida = null;
-        console.log(noticiaData);
+
 
         if (error) {
           console.error('Error al obtener noticia:', error);
@@ -161,7 +162,6 @@ const Noticia = () => {
               .eq('id_usuario', noticiaObtenida.id_usuario_creador.id_usuario)
               .order('created_at', { ascending: false });
             setComentarios(comentariosData || []);
-            console.log(comentariosData);
           } catch (error) {
             console.error('Error al obtener comentarios:', error);
           }
@@ -387,7 +387,7 @@ const Noticia = () => {
           {/* Cuerpo del Artículo */}
           <div
             className="cuerpo-articulo"
-            dangerouslySetInnerHTML={{ __html: noticia.contenido || '<p>Contenido no disponible</p>' }}
+            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(noticia.contenido || '<p>Contenido no disponible</p>') }}
           ></div>
 
           {/* Biografía del Autor */}

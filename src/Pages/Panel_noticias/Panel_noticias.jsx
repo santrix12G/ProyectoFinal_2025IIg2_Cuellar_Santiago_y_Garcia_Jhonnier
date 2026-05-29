@@ -129,7 +129,7 @@ const Panel_noticias = () => {
   const manejarBusqueda = () => {
     if (terminoBusqueda.trim()) {
       // Aquí puedes implementar navegación a una página de resultados
-      console.log('Buscando:', terminoBusqueda);
+
     }
   };
 
