@@ -80,7 +80,7 @@ const Login = () => {
   // Función para manejar el enlace de "Olvidé mi contraseña"
   const handleForgotPassword = (e) => {
     e.preventDefault();
-    console.log('Abriendo modal de recuperación de contraseña...');
+
     // Aquí podrías abrir un modal o redirigir
   };
 
